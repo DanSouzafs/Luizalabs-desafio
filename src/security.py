@@ -7,8 +7,7 @@ from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import HTTPBearer
 from pydantic import BaseModel
 
-SECRET = "my-secret"
-ALGORITHM = "HS256"
+from src.config import settings
 
 
 class AccessToken(BaseModel):
@@ -30,19 +29,24 @@ def sign_jwt(user_id: int) -> JWTToken:
     payload = {
         "iss": "desafio-bank.com.br",
         "sub": user_id,
-        "aud": "desafio-bank",
-        "exp": now + (60 * 30),  # 30 minutes
+        "aud": settings.jwt_audience,
+        "exp": now + (60 * settings.jwt_expiration_minutes),
         "iat": now,
         "nbf": now,
         "jti": uuid4().hex,
     }
-    token = jwt.encode(payload, SECRET, algorithm=ALGORITHM)
+    token = jwt.encode(payload, settings.jwt_secret, algorithm=settings.jwt_algorithm)
     return {"access_token": token}
 
 
 async def decode_jwt(token: str) -> JWTToken | None:
     try:
-        decoded_token = jwt.decode(token, SECRET, audience="desafio-bank", algorithms=[ALGORITHM])
+        decoded_token = jwt.decode(
+            token,
+            settings.jwt_secret,
+            audience=settings.jwt_audience,
+            algorithms=[settings.jwt_algorithm],
+        )
         _token = JWTToken.model_validate({"access_token": decoded_token})
         return _token if _token.access_token.exp >= time.time() else None
     except Exception:

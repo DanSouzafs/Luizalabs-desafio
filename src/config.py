@@ -6,6 +6,10 @@ class Settings(BaseSettings):
 
     database_url: str
     environment: str = "production"
+    jwt_secret: str
+    jwt_algorithm: str = "HS256"
+    jwt_audience: str = "desafio-bank"
+    jwt_expiration_minutes: int = 30
 
 
 settings = Settings()

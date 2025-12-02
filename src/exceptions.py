@@ -4,3 +4,7 @@ class AccountNotFoundError(Exception):
 
 class BusinessError(Exception):
     pass
+
+
+class UnauthorizedError(Exception):
+    pass
