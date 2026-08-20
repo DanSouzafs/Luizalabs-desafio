@@ -20,3 +20,9 @@ Para a realização deste desafio, você deve atender aos seguintes requisitos t
 - **Segurança:** Implemente autenticação usando JWT para proteger os endpoints que necessitam de acesso autenticado.
 - **Documentação com OpenAPI:**  Certifique-se de que sua API esteja bem documentada, incluindo descrições adequad
 as para cada endpoint, parâmetros e modelos de dados.
+
+Testando para ver se ele barra valores errados:
+<img width="767" height="145" alt="Captura_de_tela_20260820_140302" src="https://github.com/user-attachments/assets/d7875160-5131-4f2e-9aa6-2dbbdf357dfa" />
+
+No OpenAPI:
+<img width="1329" height="512" alt="Captura_de_tela_20260820_140503" src="https://github.com/user-attachments/assets/c39c88d5-d0a5-49ef-972a-c19f288c4332" />
