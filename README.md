@@ -1,4 +1,4 @@
-# Banking API — Python & FastAPI
+# Banking API usando Python & FastAPI
 
 API REST assíncrona para operações bancárias, desenvolvida com **Python e FastAPI**.
 
