@@ -230,4 +230,4 @@ O foco foi transformar os conceitos estudados no bootcamp em uma aplicação bac
 
 **Daniel Ferreira**
 
-Projeto desenvolvido como parte da formação **Luizalabs — Back-end com Python / DIO**.
+Projeto desenvolvido como parte da formação **Luizalabs Back-end com Python / DIO**.
