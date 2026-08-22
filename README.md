@@ -1,4 +1,4 @@
-# Banking API — Python & FastAPI
+# Desafio Luizalabs - Banking API — Python & FastAPI
 
 API REST assíncrona para operações bancárias, desenvolvida com **Python e FastAPI**.
 
